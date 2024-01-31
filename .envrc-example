@@ -1,0 +1,4 @@
+# copy to .envrc (see direnv: https://direnv.net/)
+# be sure to allow direnv execution for the project folder using: 'direnv allow .'
+# fontawesome pro license - will be needed for initial npm install or loading new icons
+export FONTAWESOME_NPM_AUTH_TOKEN=abcdefghijklmnop

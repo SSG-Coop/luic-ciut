@@ -1,0 +1,6 @@
+// © Copyright 2023, LUIC-CIUT's Contributors
+// list of locales available to app
+export default {
+  en: "English",
+  fr: "français",
+};
