@@ -12,7 +12,7 @@ import App from "./App.vue";
 import { createApp } from "vue";
 
 // Plugins
-// loadFonts, vuetify, pinia, router, FontAwesomeIcon, i18n, awsExportsPlugin
+// loadFonts, google analytics/gtag, vuetify, pinia, router, FontAwesomeIcon, i18n, awsExportsPlugin
 import { registerPlugins } from "@/plugins";
 
 /**

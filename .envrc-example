@@ -2,3 +2,5 @@
 # be sure to allow direnv execution for the project folder using: 'direnv allow .'
 # fontawesome pro license - will be needed for initial npm install or loading new icons
 export FONTAWESOME_NPM_AUTH_TOKEN=abcdefghijklmnop
+# supply google analytics gtag ID. Disable analytics by setting VITE_USE_GTAG='false' in .env.dev and/or .env.prod
+export VITE_GTAG_ID=G-1234567890

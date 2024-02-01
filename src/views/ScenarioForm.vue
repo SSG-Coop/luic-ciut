@@ -54,8 +54,19 @@
           <h3 class="mt-2">
             <v-icon class="pl-4 pr-6">{{ step.icon }}</v-icon>
             {{ step.title }}
-            <span v-if="completedStep != -1 && index > 0 && index <= 5" class="ml-8">
-              <references-info-btn-dialog :references="getReferencesForNeighbourhoodType(scenario.neighbourhoodType, step.id)" :title="`${step.title} Assumptions and References`"></references-info-btn-dialog>
+            <span
+              v-if="completedStep != -1 && index > 0 && index <= 5"
+              class="ml-8"
+            >
+              <references-info-btn-dialog
+                :references="
+                  getReferencesForNeighbourhoodType(
+                    scenario.neighbourhoodType,
+                    step.id
+                  )
+                "
+                :title="`${step.title} Assumptions and References`"
+              ></references-info-btn-dialog>
             </span>
           </h3>
           <component
@@ -80,18 +91,24 @@
         icon="$exclamationTriangle"
         transition="slide-y-transition"
       >
-        {{  $t("forms.errorAlert") }}
+        {{ $t("forms.errorAlert") }}
       </v-alert>
     </v-slide-y-reverse-transition>
     <!-- BUTTONS -->
     <v-row class="my-4" justify="space-between">
       <v-col cols="auto">
-        <v-btn @click="cancel" v-if="activeStep === 0"> {{  $t("forms.cancel") }} </v-btn>
-        <v-btn @click="back" v-else> {{  $t("forms.back") }} </v-btn>
+        <v-btn @click="cancel" v-if="activeStep === 0">
+          {{ $t("forms.cancel") }}
+        </v-btn>
+        <v-btn @click="back" v-else> {{ $t("forms.back") }} </v-btn>
       </v-col>
       <v-col cols="auto">
         <v-btn color="success" @click="validateStep(activeStep)">
-          {{ activeStep < steps.length - 1 ? $t("forms.next") : $t("forms.saveToWorksheet") }}
+          {{
+            activeStep < steps.length - 1
+              ? $t("forms.next")
+              : $t("forms.saveToWorksheet")
+          }}
         </v-btn>
       </v-col>
     </v-row>
@@ -114,6 +131,7 @@ import ScenarioFormStepServices from "@/components/ScenarioFormStepServices.vue"
 import ScenarioFormStepInfrastructure from "@/components/ScenarioFormStepInfrastructure.vue";
 import ScenarioFormStepTransportation from "@/components/ScenarioFormStepTransportation.vue";
 import ScenarioFormStepRevenue from "@/components/ScenarioFormStepRevenue.vue";
+import gtagUtils from "@/utils/gtagUtils";
 
 export default defineComponent({
   name: "ScenarioForm",
@@ -136,15 +154,15 @@ export default defineComponent({
     onBeforeMount(() => {
       if (scenarioUtils().getActiveScenario.value !== null) {
         // load scenario data for editing
-        scenario.value = {...scenarioUtils().getActiveScenario.value};
+        scenario.value = { ...scenarioUtils().getActiveScenario.value };
       }
     });
 
     onMounted(() => {
       // check if loading a saved scenario to edit
       if (scenarioUtils().getActiveScenario.value !== null) {
-        for (let i=0; i<stepForms.value.length; i++) {
-          if ('populate' in stepForms.value[i]) {
+        for (let i = 0; i < stepForms.value.length; i++) {
+          if ("populate" in stepForms.value[i]) {
             stepForms.value[0].populate();
           }
         }
@@ -280,6 +298,10 @@ export default defineComponent({
       // save to worksheet
       // console.log(`scenario is being saved to excel...`);
       useExcelUtils().saveScenarioToWorksheet(scenario.value);
+      // analytics tracking
+      // label to include 3 fields/values separated by commas: provId, neighbourhoodType, year
+      const label = `${scenario.value.provId}, ${scenario.value.neighbourhoodType}, ${scenario.value.year}`;
+      gtagUtils().gtagEvent(`save_scenario`, `scenarios`, label);
       // redirect to home page
       router.push({ name: "dashboard" });
     };
@@ -293,7 +315,8 @@ export default defineComponent({
 
     return {
       scenario,
-      getReferencesForNeighbourhoodType: useNeigbhourhoodTypeUtils().getReferencesForNeighbourhoodType,
+      getReferencesForNeighbourhoodType:
+        useNeigbhourhoodTypeUtils().getReferencesForNeighbourhoodType,
       steps,
       stepForms,
       activeStep,
