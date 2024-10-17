@@ -17,7 +17,7 @@
             >
               {{ item.name }}
               <v-chip class="ml-2"
-                >{{ item.qty }} {{ item.active ? `KT` : `VKT` }}/HH</v-chip
+                >{{ item.qty }} {{ item.active ? `KT` : `VKT` }}/{{ $t('general.dwelling', 1) }}</v-chip
               >
             </v-expansion-panel-title>
             <v-expansion-panel-text eager>

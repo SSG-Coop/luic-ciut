@@ -70,6 +70,9 @@ export default function buildingsConfig() {
         id: "passiveHouse",
         name: t("appConfig.buildings.buildingEnergyCodes.passiveHouse"),
         description: t("appConfig.buildings.buildingEnergyCodes.passiveHouseDesc"),
+        references: [
+            [t("appConfig.buildings.references.passiveHouse"), "https://passivehouse-international.org/index.php?page_id=150"],
+        ],
         eui: {
             single: 432,
             row: 432,

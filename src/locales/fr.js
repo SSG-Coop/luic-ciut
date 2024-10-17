@@ -281,6 +281,7 @@ export default {
         tgsv3t2: `Amélioration de l'efficacité énergétique de 30 % par rapport à la référence pour les immeubles résidentiels à logements multiples`,
         tgsv3t3: `Amélioration de l'efficacité énergétique de 50 % par rapport à la référence pour les immeubles résidentiels à logements multiples`,
         tgsv3t4: `Amélioration de l'efficacité énergétique de 60 % par rapport à la référence pour les immeubles résidentiels à logements multiples`,
+        passiveHouse: `International Passive House Association`,
         shrinkThatFootprint: `Taille des maisons : Shrink That Footprint`,
       },
     },

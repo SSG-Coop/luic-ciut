@@ -73,7 +73,7 @@ export default function transportationConfig() {
     references: [
       [
         t("appConfig.transportation.references.toolForEvalSust"),
-        "https://publications.gc.ca/site/eng/9.808262/publication.html",
+        "https://publications.gc.ca/collections/collection_2011/schl-cmhc/nh18-1-4/NH18-1-4-1-2000-eng.pdf",
       ],
       [t("appConfig.transportation.references.dieselnetDieselConsumption"), "https://dieselnet.com/standards/us/fe_ghg.php"],
       [t("appConfig.transportation.references.nrelHConsumption"), "https://www.nrel.gov/docs/fy14osti/60603.pdf"],
