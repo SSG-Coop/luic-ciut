@@ -11,6 +11,12 @@ The Land Use Impact Calculator (LUIC) is a Microsoft Office Add-In for Excel. It
 
 Model input assumptions—including energy sources, emissions factors, building codes, travel behaviours, etc.—use provincial values. These can be replaced with user assumptions.
 
+## About this repository
+
+This code repository and the following instructions are intended for a developer audience. The repository is intended to make the logic and code behind LUIC transparent and open source. 
+
+If you simply want to use the LUIC tool, you DO NOT need to install and setup this repository as described below.  Instead, simply install the latest version of the Excel Add-in via the Microsoft AppSource store. __The latest version of the tool can be [viewed here](https://luic-ciut.ssg.coop/), and downloaded from the AppSource store [here](https://appsource.microsoft.com/en-US/product/office/WA200005582).__ 
+
 ## License
 This project is made available under GPL 3 license. See `LICENSE`.
 
@@ -101,7 +107,9 @@ npm run build
 ```
 
 ## Loading the Add-In in Excel
-To use this project as a javascript Add-In for Excel, the project must either be [sideloaded](https://learn.microsoft.com/en-us/office/dev/add-ins/testing/sideload-office-add-ins-for-testing), or published to the [Microsoft AppSource Store](https://appsource.microsoft.com/).
+To use this project as a javascript Add-In for Excel, the project must either be [sideloaded](https://learn.microsoft.com/en-us/office/dev/add-ins/testing/sideload-office-add-ins-for-testing), your version must be published to the [Microsoft AppSource Store](https://appsource.microsoft.com/), or you can use the latest version of the tool already published to the AppSource store by Sustainability Solutions Group.
+
+__The latest version of the tool can be [viewed here](https://luic-ciut.ssg.coop/), and downloaded from the AppSource store [here](https://appsource.microsoft.com/en-US/product/office/WA200005582).__
 
 ## Project Supporters
 This project is supported by the [Green Municipal Fund](https://greenmunicipalfund.ca/), a program of [Federation of Canadian Municipalities](https://fcm.ca/en).
