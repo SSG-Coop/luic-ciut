@@ -126,7 +126,7 @@ This project is supported by the [Green Municipal Fund](https://greenmunicipalfu
 This projected is developed and maintained by [Sustainability Solutions Group](https://ssg.coop)
 
 <div style="text-align: center;">
-  <img src="src/assets/ssg-logo.png" width="400" alt="SSG">
+  <img src="src/assets/SSG_Logotype_Black.png" width="400" alt="SSG">
 </div>
 
 

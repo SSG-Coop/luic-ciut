@@ -56,7 +56,7 @@
               target="_blank"
             >
               <v-img
-                :src="getImageUrl(`ssg-logo.png`)"
+                :src="getImageUrl(`SSG_Logotype_Black.png`)"
                 v-bind="props"
                 max-width="270"
                 max-height="270"
